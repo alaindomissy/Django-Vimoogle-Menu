@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='Vimooglemenu',
-      version='0.1',
+      version='0.2',
       description='Vimeo-Google inspired top menu for django',
       author='Alan Domissy',
       author_email='vimooglemenu@geomarcomputers.com',
