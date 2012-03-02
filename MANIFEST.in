@@ -1,0 +1,2 @@
+recursive-include vimooglemenu *.txt *.haml *.html *.js *.scss *.css *.gif *.png
+recursive-exclude vimooglemenu *.py[co]

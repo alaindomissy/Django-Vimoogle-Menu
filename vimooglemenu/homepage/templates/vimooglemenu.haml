@@ -1,0 +1,255 @@
+!!!
+-# This comment will not be included in the compiled html
+/  This comment will be included in the compiled html
+%html
+  %head
+    %title Google-Vimeo Combination Menu 
+    %script{'type':"text/javascript", 'src':"/js/jquery-1.4.2.min.js"}
+    %script{'type':"text/javascript", 'src':"/js/jquery.vimooglemenu.js"}
+    
+    /- load compressed
+    /- compressed_css 'colors'
+    
+    %link{'rel':"stylesheet", 'type':"text/css", 'href':"/css/vimooglemenu.css"}
+    
+    :javascript
+      $('document').ready(function(){$('.combomenu').fixedMenu();});   
+
+      
+  %body
+    %img{'class':'leftend', 'alt':"", 'src':'/images/vimeomenuleft.png' }
+    
+    .combomenu
+        
+      %ul{'id':'lefthalfmenu'}
+        -load homepage_tags
+        / Using class='singlelink' for links with no dropdown 
+        / Using class='current' for the link of the current page 
+        / REMOVED target='_blank'
+       
+        <li class="singlelink  
+          - if  request.path == '/link0/' 
+            current
+          "><a href='/link0/' >Link0</a>
+        <li class="singlelink 
+          - if request.path == '/link1/'
+            current 
+          "><a href='/link1/' >Link1</a>
+        </li>
+        <li class="singlelink 
+          - if  request.path == '/link2/' 
+            current
+          "><a href='/link2/' >Link2</a>
+        </li>
+        <li class="singlelink  
+          - if  request.path == '/link3/' 
+            current
+          "><a href='/link3/' >Link3</a>
+        </li>
+        -#%li  
+          .singlelink
+            %a{'href':'/link4/'} Link4
+        -#%li
+          .singlelink
+            %a{'href':'/link5/'} Link5
+        -#%li
+          .'singlelink
+            %a{'href':'/link6/'} Link6
+            
+        %li 
+          / Do not add any class for links with dropdown
+          %a{'href':'#'} More<span class="arrow"></span>
+          %ul
+ 
+            / Drop Down menu Items 
+            %li
+            
+              %img{'class':'roundcornertopleft',  'alt':'', 'src':'/images/corner_inset_left.png'}
+              %a{'href':'/more1/'} More 1
+              %img{'class':'roundcornertopright', 'alt':'', 'src':'/images/corner_inset_right.png'}
+              
+            %li
+              %a{'href':'/more2/'} More 2
+            /%li
+            %li
+              %a{'href':'/more3/'} More 3
+            /%li
+              .mid-line
+            %li
+              %a{'href':'/more4/'} More 4
+            %li
+              %a{'href':'/more5/'} More 5
+            %li
+              %a{'href':'/more6/'} More 6
+            /%li
+              .mid-line
+            %li
+              %a{'href':'/evenmore/'} EvenMore
+            /%li
+              .mid-line
+            %li{'class':'dropdownbottom'}
+              %img{'class':'roundcornerbottom_left', 'alt':'', 'src':'/images/corner_left.png' }
+              %img{'class':'betweencorners',         'alt':'', 'src':'/images/dot.gif'         }
+              %img{'class':'roundcornerbottomright', 'alt':'', 'src':'/images/corner_right.png'}
+                  
+      %ul{'id':'righthalfmenu'}
+        
+        / left part of Vimeo inspierd menu is not needed (for now?), removed following
+        /%li{'class':'logo'}
+          %img{'style':'float:right;', 'alt':'', 'src':'/images/vimeomenuleft.png'}
+          %ul{'id':'main'}
+            %li Welcome to <b>Create Vimeo-like top navigation</b> tutorial!
+            %li{'class':'last'}
+            
+              %img{'class':'corner_left',   'alt':'', 'src':'/images/corner_blue_left.png' }
+              %img{'class':'betweencorners','alt':'', 'src':'/images/dot_blue.png'         }
+              %img{'class':'corner_right',  'alt':'', 'src':'/images/corner_blue_right.png'}
+              
+              
+        %img{'class':'rightend', 'alt':"", 'src':'/images/vimeomenuright.png' }
+        
+        %li{'class':'searchContainer'}
+          %div
+            %input{'type':'text', 'id':'searchField'}
+            %img{'src':'/images/magnifiericon.png', 'alt':'Search', 'onclick':'alert("You clicked on search button")'}
+          %ul{'id':'search'} 
+          
+            %li
+              %img{'class':'roundcornertopleft',  'alt':'', 'src':'/images/corner_inset_left.png' }
+              /added label tag to get focus on all submenu item
+              %label                                                        
+                %input{'id':'/search0/','type':'checkbox'} Search Main 
+              %img{'class':'roundcornertopright', 'alt':'', 'src':'/images/corner_inset_right.png'}
+              
+            %li
+              %label
+                %input{'id':'/search1/',  'type':'checkbox'} Search 1
+            %li
+              %label
+                %input{'id':'/search2/',  'type':'checkbox'} Search 2
+            %li
+              %label
+                %input{'id':'/search3/',  'type':'checkbox'} Search 3
+            %li
+              %label
+                %input{'id':'/search4/',  'type':'checkbox'} Search 4
+            %li
+              %label
+                %input{'id':'/search5/',  'type':'checkbox'} Search 5
+              
+            %li{'class':'dropdownbottom'}
+              %img{'class':'roundcornerbottomleft', 'alt':'', 'src':'/images/corner_left.png' }
+              %img{'class':'betweencorners',        'alt':'', 'src':'/images/dot.gif'    }
+              %img{'class':'roundcornerbottomright','alt':'', 'src':'/images/corner_right.png'} 
+              
+        %li
+          %a{'href':'#'} Help
+          %ul{'id':'help'}
+            %li
+            
+              %img{'class':'roundcornertopleft',  'alt':'', 'src':'/images/corner_inset_left.png'}
+              %a{'href':'/help0/'} Help Main
+              %img{'class':'roundcornertopright', 'alt':'', 'src':'/images/corner_inset_right.png'}
+              
+            %li
+              %a{'href':'/help1/'} Help 1
+            %li
+              %a{'href':'/help2/'} Help 2
+            %li
+              %a{'href':'/help3/'} Help 3
+              
+            %li{'class':'dropdownbottom'}
+              %img{'class':'roundcornerbottom_left', 'alt':'', 'src':'/images/corner_left.png' }
+              %img{'class':'betweencorners',         'alt':'', 'src':'/images/dot.gif'         }
+              %img{'class':'roundcornerbottomright', 'alt':'', 'src':'/images/corner_right.png'}
+        
+        //added class singlelink to borrow from left side menu behavior       
+        %li{'class' : 'singlelink'}
+          %a{'href' : '/admin/'} Admin
+        //added class singlelink to borrow from left side menu behavior  
+        %li{'class' : 'singlelink'}
+          %a{'href' : '/login/'} Login
+        %li 
+          .filler &nbsp;
+          
+       /%img{'class':'rightend', 'alt':"", 'src':'/images/vimeomenuright.png' }  
+        
+    .content
+      .intro
+        %div 
+          %h1 {{pagename|capfirst}}
+          /%h2 request path: {{request.path}}
+        %div 
+          %div This template provides a fixed top navigation bar with rounded corners and dropdown sub-menus. 
+          All code is using hamlpy and stylized using sass.
+          %h3 References:
+          %div This template borrowing ideas and code from the following sources:
+        %ul  
+          %li
+            %a{'href':'http://praveenfrancis.com/design/googles-new-top-navigation-bar-css-tutorial/'} Praveen Francis
+          %li
+            %a{'href':'http://blog.geotitles.com/2011/09/creating-the-new-top-black-bar-found-in-google-and-all-its-products/'} Hitherto Web Labs
+          %li
+            %a{'href':'http://www.jankoatwarpspeed.com/post/2009/01/19/Create-Vimeo-like-top-navigation.aspx'} Janko at Warp Speed
+          %li
+            %a{'href':'http://www.wealthydragon.com/2011/08/18/lock-navigation-bar-to-top-of-screen/'} WealthyDragon
+          %li
+            %a{'href':'http://www.turnkeylinux.org/blog/django-navbar'} Turnkey Linux
+        %div 
+          %h3 Resources:
+          %ul
+            %li python django
+            %li staticfiles : for example via pinax basic bundled project
+            %li hamlpy:       
+            haml to html pre-processing  via haml-watcher <br/>
+            install hamlpy this way : "pip install git+git://github.com/jessemiller/HamlPy.git" <br/>
+            instead of "pip install hamlpy" as explained here:  https://github.com/jessemiller/HamlPy/issues/64
+            %li jaml: runtime haml to html compilation
+            %li sass : sass to css pre-processing via ruby /sass watch
+            %li django-pipeline: runtime sass to css compilation
+          /%h3 Next steps:
+          /%ul 
+            %li django-registration: integration with login/admin buttons ?
+            %li pinax : for integration of lefthalf menu and Help Search sub menus ?
+          %h3 Parameters:
+          %ul
+            %li menu width
+            %li menu height
+            %li sub-menus width
+            %li font
+            %li colors
+        %div 
+          %h3 Palettes:
+        .palette 
+          .palettetitle Old Vimeo Palette
+          .sample{'id':'gray13ish'    } gray13ish
+          .sample{'id':'gray38'       } gray38
+          .sample{'id':'vimblue'      } vimblue
+          .sample{'id':'vimblueer'    } vimblueer
+          .sample{'id':'vimblueerer'  } vimblueerer
+          .sample{'id':'vimgreen'     } vimgreen
+        .palette 
+          .palettetitle Old Google Palette
+          .sample{'id':'black'        } black
+          .sample{'id':'gray20'       } gray20
+          .sample{'id':'gray40'       } gray40
+          .sample{'id':'silver'       } silver
+          .sample{'id':'gray80'       } gray80
+          .sample{'id':'gray90'       } gray90
+          .sample{'id':'white'        } white
+          .sample{'id':'bluegreen'    } bluegreen
+          .sample{'id':'bluegreener'  } bluegreener
+          .sample{'id':'bluegreenerer'} bluegreenerer
+          .sample{'id':'red'          } red
+        .palette 
+          .palettetitle New Google Palette
+          .sample{'id':'gray18ish'   } gray18ish    
+          .sample{'id':'sgilightgray'} sgilightgray 
+          .sample{'id':'white'       } white       
+        .palette 
+          .palettetitle Combined Palette
+          .sample{'id':'gray18ish'   } gray18ish    
+          .sample{'id':'sgilightgray'} sgilightgray 
+          .sample{'id':'white'       } white
+          .sample{'id':'vimgreen'     } vimgreen
+          .sample{'id':'red'          } red
