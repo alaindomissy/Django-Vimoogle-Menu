@@ -28,36 +28,37 @@
         / REMOVED target='_blank'
        
         <li class="singlelink  
-          - if  request.path == '/link0/' 
+          - if  request.path_info == '/link0/' 
             current
-          "><a href='/link0/' >Link0</a>
+          "><a href='../link0/' >Link0</a>
         <li class="singlelink 
-          - if request.path == '/link1/'
+          - if request.path_info == '/link1/'
             current 
-          "><a href='/link1/' >Link1</a>
+          "><a href='../link1/' >Link1</a>
         </li>
         <li class="singlelink 
-          - if  request.path == '/link2/' 
+          - if  request.path_info == '/link2/' 
             current
-          "><a href='/link2/' >Link2</a>
+          "><a href='../link2/' >Link2</a>
         </li>
         <li class="singlelink  
-          - if  request.path == '/link3/' 
+          - if  request.path_info == '/link3/' 
             current
-          "><a href='/link3/' >Link3</a>
+          "><a href='../link3/' >Link3</a>
         </li>
         -#%li  
           .singlelink
-            %a{'href':'/link4/'} Link4
+            %a{'href':'../link4/'} Link4
         -#%li
           .singlelink
-            %a{'href':'/link5/'} Link5
+            %a{'href':'../link5/'} Link5
         -#%li
           .'singlelink
-            %a{'href':'/link6/'} Link6
+            %a{'href':'../link6/'} Link6
             
+        / Do not add any class for links with dropdown
         %li 
-          / Do not add any class for links with dropdown
+          
           %a{'href':'#'} More<span class="arrow"></span>
           %ul
  
@@ -65,26 +66,27 @@
             %li
             
               %img{'class':'roundcornertopleft',  'alt':'', 'src':'/images/corner_inset_left.png'}
-              %a{'href':'/more1/'} More 1
+              %a{'href':'../more1/'} More 1
               %img{'class':'roundcornertopright', 'alt':'', 'src':'/images/corner_inset_right.png'}
               
             %li
-              %a{'href':'/more2/'} More 2
+              %a{'href':'../more2/'} More 2
             /%li
+            
             %li
-              %a{'href':'/more3/'} More 3
-            /%li
-              .mid-line
-            %li
-              %a{'href':'/more4/'} More 4
-            %li
-              %a{'href':'/more5/'} More 5
-            %li
-              %a{'href':'/more6/'} More 6
+              %a{'href':'../more3/'} More 3
             /%li
               .mid-line
             %li
-              %a{'href':'/evenmore/'} EvenMore
+              %a{'href':'../more4/'} More 4
+            %li
+              %a{'href':'../more5/'} More 5
+            %li
+              %a{'href':'../more6/'} More 6
+            /%li
+              .mid-line
+            %li
+              %a{'href':'../evenmore/'} EvenMore
             /%li
               .mid-line
             %li{'class':'dropdownbottom'}
@@ -123,19 +125,19 @@
               
             %li
               %label
-                %input{'id':'/search1/',  'type':'checkbox'} Search 1
+                %input{'id':'../search1/',  'type':'checkbox'} Search 1
             %li
               %label
-                %input{'id':'/search2/',  'type':'checkbox'} Search 2
+                %input{'id':'../search2/',  'type':'checkbox'} Search 2
             %li
               %label
-                %input{'id':'/search3/',  'type':'checkbox'} Search 3
+                %input{'id':'../search3/',  'type':'checkbox'} Search 3
             %li
               %label
-                %input{'id':'/search4/',  'type':'checkbox'} Search 4
+                %input{'id':'../search4/',  'type':'checkbox'} Search 4
             %li
               %label
-                %input{'id':'/search5/',  'type':'checkbox'} Search 5
+                %input{'id':'../search5/',  'type':'checkbox'} Search 5
               
             %li{'class':'dropdownbottom'}
               %img{'class':'roundcornerbottomleft', 'alt':'', 'src':'/images/corner_left.png' }
@@ -148,27 +150,34 @@
             %li
             
               %img{'class':'roundcornertopleft',  'alt':'', 'src':'/images/corner_inset_left.png'}
-              %a{'href':'/help0/'} Help Main
+              %a{'href':'../help0/'} Help Main
               %img{'class':'roundcornertopright', 'alt':'', 'src':'/images/corner_inset_right.png'}
               
             %li
-              %a{'href':'/help1/'} Help 1
+              %a{'href':'../help1/'} Help 1
             %li
-              %a{'href':'/help2/'} Help 2
+              %a{'href':'../help2/'} Help 2
             %li
-              %a{'href':'/help3/'} Help 3
+              %a{'href':'../help3/'} Help 3
               
             %li{'class':'dropdownbottom'}
               %img{'class':'roundcornerbottom_left', 'alt':'', 'src':'/images/corner_left.png' }
               %img{'class':'betweencorners',         'alt':'', 'src':'/images/dot.gif'         }
               %img{'class':'roundcornerbottomright', 'alt':'', 'src':'/images/corner_right.png'}
         
-        //added class singlelink to borrow from left side menu behavior       
-        %li{'class' : 'singlelink'}
-          %a{'href' : '/admin/'} Admin
+        
         //added class singlelink to borrow from left side menu behavior  
-        %li{'class' : 'singlelink'}
-          %a{'href' : '/login/'} Login
+        <li class="singlelink 
+          - if  request.path_info == '/admin/' 
+            current
+          "><a href='../admin/' >Admin</a>
+        </li>     
+        <li class="singlelink 
+          - if  request.path_info == '/login/' 
+            current
+          "><a href='../login/' >Login</a>
+        </li>   
+       
         %li 
           .filler &nbsp;
           

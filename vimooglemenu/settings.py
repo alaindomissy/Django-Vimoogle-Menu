@@ -6,7 +6,7 @@ import sys
 import os
 from os.path import abspath, basename, dirname, join, normpath
 
-#from helpers import gen_secret_key
+
 
 
 
@@ -15,27 +15,34 @@ from os.path import abspath, basename, dirname, join, normpath
 # Absolute filesystem path to this Django project directory.
 
 #DJANGO_ROOT = dirname(dirname(abspath(__file__)))
-DJANGO_ROOT = dirname(abspath(__file__))                           # currently /home/user/python/vimooglemenu/vimooglemenu
+DJANGO_ROOT = dirname(abspath(__file__))                           # currently /home/picturep/sites/djangovimooglemenu/vimooglemenu
 
 # Site name.
-SITE_NAME = basename(DJANGO_ROOT)                                  # currently /home/user/python/vimooglemenu
+SITE_NAME = basename(DJANGO_ROOT)                                  # currently vimooglemenu
 
 # Absolute filesystem path to the top-level project folder.
-SITE_ROOT = dirname(DJANGO_ROOT)                                   # currently vimooglemenu
-
-# Absolute filesystem path to the secret file which holds this project's
-# SECRET_KEY. Will be auto-generated the first time this file is interpreted.
-#SECRET_FILE = normpath(join(SITE_ROOT, 'deploy', 'SECRET'))
+SITE_ROOT = dirname(DJANGO_ROOT)                                   # currently /home/picturep/sites/djangovimooglemenu/
 
 # Add all necessary filesystem paths to our system path so that we can use
 # python import statements.
 sys.path.append(SITE_ROOT)
+
+# Added by AD
+sys.path.append(DJANGO_ROOT)
+
 #sys.path.append(normpath(join(DJANGO_ROOT, 'apps')))             # not yet organised with all apps folder inside an apps folder
 #sys.path.append(normpath(join(DJANGO_ROOT, 'libs')))
 
 ########## END PATH CONFIGURATION
 
 
+
+
+#from helpers import gen_secret_key
+
+# Absolute filesystem path to the secret file which holds this project's
+# SECRET_KEY. Will be auto-generated the first time this file is interpreted.
+#SECRET_FILE = normpath(join(SITE_ROOT, 'deploy', 'SECRET'))
 
 
 
@@ -125,7 +132,7 @@ USE_L10N = True
 ################################################################################
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/home/user/python/vimooglemenu/vimooglemenu/media/'
+MEDIA_ROOT = '/home/picturep/sites/djangovimooglemenu/vimooglemenu/media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -147,6 +154,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static')         # currently  '/home/user/python/vimooglemenu/static'
 #STATIC_ROOT = normpath(join(DJANGO_ROOT, 'static')),
 
+
 # URL prefix for static files.
 STATIC_URL = '/static/'
 # URL prefix for admin static files -- CSS, JS and images.
@@ -158,9 +166,9 @@ STATICFILES_DIRS = (
     #normpath(join(DJANGO_ROOT, 'assets')),                               # currently '/home/user/python/vimooglemenu/assets'
      #         '/home/user/python/vimooglemenu/vimooglemenu/assets/'
      #         '/home/user/python/vimooglemenu/vimooglemenu/homepage/static/',
-   # ('css',   '/home/user/python/vimooglemenu/vimooglemenu/homepage/static/css/'   ),   # /static/css/style.css will be loaded from indicated directory
-   # ('js',    '/home/user/python/vimooglemenu/vimooglemenu/homepage/static/js/'   ),    # /static/js/jquery.js will be loaded from ...
-   # ('images','/home/user/python/vimooglemenu/vimooglemenu/homepage/static/images/')    # /static/images/dot.png   will be loaded from...
+    ('css',   '/home/user/python/vimooglemenu/vimooglemenu/homepage/static/css/'   ),   # /static/css/style.css will be loaded from indicated directory
+    ('js',    '/home/user/python/vimooglemenu/vimooglemenu/homepage/static/js/'   ),    # /static/js/jquery.js will be loaded from ...
+    ('images','/home/user/python/vimooglemenu/vimooglemenu/homepage/static/images/')    # /static/images/dot.png   will be loaded from...
 )
 
 # List of finder classes that know how to find static files in various locations.
@@ -200,8 +208,8 @@ TEMPLATE_LOADERS = (
 
 # Directories to search when loading templates.
 TEMPLATE_DIRS = (
-    '/home/user/python/vimooglemenu/templates/', 
-    '/home/user/python/vimooglemenu/homepage/templates/',
+    #'/home/user/python/vimooglemenu/templates/', 
+    #'/home/user/python/vimooglemenu/homepage/templates/',
 )
 
 ########## END TEMPLATE CONFIGURATION
@@ -296,7 +304,7 @@ SECRET_KEY = '4k&25fo3=6+5jws8+k6r96b_+3+*019vup_v%wi@mwv8l_*656'
 
 
 
-# inegration of pipeline with staticfiles
+# integration of pipeline with staticfiles
 # either of these alternatives changes the method used by staticfiles collectstatic to save copy of static files to compress first
 #STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'     # the default StaticFilesStorage  not StaticFileStorage
 STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'          # replacement   bug?

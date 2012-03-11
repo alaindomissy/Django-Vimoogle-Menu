@@ -6,22 +6,23 @@ admin.autodiscover()
 
 
 
-urlpatterns = patterns('django.views.static', 
-    url(r'^js/(?P<path>.*)$',       'serve', {'document_root': '/home/user/python/vimooglemenu/vimooglemenu/homepage/static/js/'    ,  'show_indexes': True} ),
-    url(r'^css/(?P<path>.*)$',      'serve', {'document_root': '/home/user/python/vimooglemenu/vimooglemenu/homepage/static/css/'   ,  'show_indexes': True} ),
-    url(r'^images/(?P<path>.*)$',   'serve', {'document_root': '/home/user/python/vimooglemenu/vimooglemenu/homepage/static/images/',  'show_indexes': True} ),
-)
+#urlpatterns = patterns('django.views.static', 
+#    url(r'^js/(?P<path>.*)$',       'serve', {'document_root': '/home/picturep/sites/djangovimooglemenu/vimooglemenu/static/js/'    ,  'show_indexes': True} ),
+#    url(r'^css/(?P<path>.*)$',      'serve', {'document_root': '/home/picturep/sites/djangovimooglemenu/vimooglemenu/static/css/'   ,  'show_indexes': True} ),
+#    url(r'^images/(?P<path>.*)$',   'serve', {'document_root': '/home/picturep/sites/djangovimooglemenu/vimooglemenu/static/images/',  'show_indexes': True} ),
+#)
 
 
-from django.conf import settings
-if settings.DEBUG:
-    urlpatterns += patterns('django.views.static',
-        url(r'^media/(?P<path>.*)$','serve', {'document_root': settings.MEDIA_ROOT,}  ),
-   )
-# this assumes MEDIA_URL has a value of '/media/'.
+#from django#.conf import settings
+#if settings.DEBUG:
+#    urlpatterns += patterns('django.views.static',
+#        url(r'^media/(?P<path>.*)$','serve', {'document_root': settings.MEDIA_ROOT,}  ),
+#   )
+## this assumes MEDIA_URL has a value of '/media/'.
 
 
-urlpatterns += patterns('',
+#urlpatterns += patterns('',
+urlpatterns = patterns('',
     # Example:
     # (r'^project/', include('project.foo.urls')),
 
@@ -30,7 +31,7 @@ urlpatterns += patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
+    #(r'^admin/', include(admin.site.urls)),
     
     (r'', include('homepage.urls')),
     
