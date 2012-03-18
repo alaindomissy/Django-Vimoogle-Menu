@@ -27,20 +27,25 @@ sys.path.append(DJANGO_ROOT)
 
 ########## SECRET KEY CONFIGURATION
 ################################################################################
+
+SECRET_KEY="dummu-key-replace-it-and-keep-it-secret"
+
 # Absolute filesystem path to the secret file which holds this project's
 # SECRET_KEY. Will be auto-generated the first time this file is interpreted.
-SECRET_FILE = normpath(join(DJANGO_ROOT,'SECRET'))
-# Try to load the SECRET_KEY from our SECRET_FILE. If that fails, then generate
-# a random SECRET_KEY and save it into our SECRET_FILE for future loading. If
-# everything fails, then just raise an exception.
-try:
-	SECRET_KEY = open(SECRET_FILE).read().strip()
-except IOError:
-	try:
-		with open(SECRET_FILE, 'w') as f:
-			f.write(gen_secret_key(50))
-	except IOError:
-		raise Exception('Cannot open file `%s` for writing.' % SECRET_FILE)
+#SECRET_FILE = normpath(join(DJANGO_ROOT,'SECRET'))
+## Try to load the SECRET_KEY from our SECRET_FILE. If that fails, then generate
+## a random SECRET_KEY and save it into our SECRET_FILE for future loading. If
+## everything fails, then just raise an exception.
+#try:
+#	SECRET_KEY = open(SECRET_FILE).read().strip()
+#except IOError:
+#  
+#try:
+#	  
+#		with open(SECRET_FILE, 'w') as f:
+#			f.write(gen_secret_key(50))
+#	except IOError:
+#		raise Exception('Cannot open file `%s` for writing.' % SECRET_FILE)
 ########## END KEY CONFIGURATION
 
 
@@ -48,7 +53,7 @@ except IOError:
 ################################################################################
 # Disable debugging for production.
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+TEMPLATE_DEBUG = True
 ########## END DEBUG CONFIGURATION
 
 
@@ -218,7 +223,7 @@ INSTALLED_APPS = (
 ROOT_URLCONF = '%s.urls' % SITE_NAME          #'vimooglemenu.urls'  unless project directory is renamed
 ########## END URL CONFIGURATION
 
-
+ 
 
 
 # integration of pipeline with staticfiles
