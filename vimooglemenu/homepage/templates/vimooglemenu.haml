@@ -4,20 +4,20 @@
 %html
   %head
     %title Google-Vimeo Combination Menu 
-    %script{'type':"text/javascript", 'src':"/js/jquery-1.4.2.min.js"}
-    %script{'type':"text/javascript", 'src':"/js/jquery.vimooglemenu.js"}
+    %script{'type':"text/javascript", 'src':"/static/js/jquery-1.4.2.min.js"}
+    %script{'type':"text/javascript", 'src':"/static/js/jquery.vimooglemenu.js"}
     
     /- load compressed
     /- compressed_css 'colors'
     
-    %link{'rel':"stylesheet", 'type':"text/css", 'href':"/css/vimooglemenu.css"}
+    %link{'rel':"stylesheet", 'type':"text/css", 'href':"/static/css/vimooglemenu.css"}
     
     :javascript
       $('document').ready(function(){$('.combomenu').fixedMenu();});   
 
       
   %body
-    %img{'class':'leftend', 'alt':"", 'src':'/images/vimeomenuleft.png' }
+    %img{'class':'leftend', 'alt':"", 'src':'/static/images/vimeomenuleft.png' }
     
     .combomenu
         
@@ -56,23 +56,21 @@
           .'singlelink
             %a{'href':'../link6/'} Link6
             
-        / Do not add any class for links with dropdown
+        / Do not add any class for links with dropdown    
         %li 
-          
           %a{'href':'#'} More<span class="arrow"></span>
           %ul
  
             / Drop Down menu Items 
             %li
             
-              %img{'class':'roundcornertopleft',  'alt':'', 'src':'/images/corner_inset_left.png'}
+              %img{'class':'roundcornertopleft',  'alt':'', 'src':'/static/images/corner_inset_left.png'}
               %a{'href':'../more1/'} More 1
-              %img{'class':'roundcornertopright', 'alt':'', 'src':'/images/corner_inset_right.png'}
+              %img{'class':'roundcornertopright', 'alt':'', 'src':'/static/images/corner_inset_right.png'}
               
             %li
               %a{'href':'../more2/'} More 2
             /%li
-            
             %li
               %a{'href':'../more3/'} More 3
             /%li
@@ -90,38 +88,38 @@
             /%li
               .mid-line
             %li{'class':'dropdownbottom'}
-              %img{'class':'roundcornerbottom_left', 'alt':'', 'src':'/images/corner_left.png' }
-              %img{'class':'betweencorners',         'alt':'', 'src':'/images/dot.gif'         }
-              %img{'class':'roundcornerbottomright', 'alt':'', 'src':'/images/corner_right.png'}
+              %img{'class':'roundcornerbottom_left', 'alt':'', 'src':'/static/images/corner_left.png' }
+              %img{'class':'betweencorners',         'alt':'', 'src':'/static/images/dot.gif'         }
+              %img{'class':'roundcornerbottomright', 'alt':'', 'src':'/static/images/corner_right.png'}
                   
       %ul{'id':'righthalfmenu'}
         
         / left part of Vimeo inspierd menu is not needed (for now?), removed following
         /%li{'class':'logo'}
-          %img{'style':'float:right;', 'alt':'', 'src':'/images/vimeomenuleft.png'}
+          %img{'style':'float:right;', 'alt':'', 'src':'/static/images/vimeomenuleft.png'}
           %ul{'id':'main'}
             %li Welcome to <b>Create Vimeo-like top navigation</b> tutorial!
             %li{'class':'last'}
             
-              %img{'class':'corner_left',   'alt':'', 'src':'/images/corner_blue_left.png' }
-              %img{'class':'betweencorners','alt':'', 'src':'/images/dot_blue.png'         }
-              %img{'class':'corner_right',  'alt':'', 'src':'/images/corner_blue_right.png'}
+              %img{'class':'corner_left',   'alt':'', 'src':'/static/images/corner_blue_left.png' }
+              %img{'class':'betweencorners','alt':'', 'src':'/static/images/dot_blue.png'         }
+              %img{'class':'corner_right',  'alt':'', 'src':'/static/images/corner_blue_right.png'}
               
               
-        %img{'class':'rightend', 'alt':"", 'src':'/images/vimeomenuright.png' }
+        %img{'class':'rightend', 'alt':"", 'src':'/static/images/vimeomenuright.png' }
         
         %li{'class':'searchContainer'}
           %div
             %input{'type':'text', 'id':'searchField'}
-            %img{'src':'/images/magnifiericon.png', 'alt':'Search', 'onclick':'alert("You clicked on search button")'}
+            %img{'src':'/static/images/magnifiericon.png', 'alt':'Search', 'onclick':'alert("You clicked on search button")'}
           %ul{'id':'search'} 
           
             %li
-              %img{'class':'roundcornertopleft',  'alt':'', 'src':'/images/corner_inset_left.png' }
+              %img{'class':'roundcornertopleft',  'alt':'', 'src':'/static/images/corner_inset_left.png' }
               /added label tag to get focus on all submenu item
               %label                                                        
-                %input{'id':'/search0/','type':'checkbox'} Search Main 
-              %img{'class':'roundcornertopright', 'alt':'', 'src':'/images/corner_inset_right.png'}
+                %input{'id':'../search0/','type':'checkbox'} Search Main 
+              %img{'class':'roundcornertopright', 'alt':'', 'src':'/static/images/corner_inset_right.png'}
               
             %li
               %label
@@ -140,18 +138,18 @@
                 %input{'id':'../search5/',  'type':'checkbox'} Search 5
               
             %li{'class':'dropdownbottom'}
-              %img{'class':'roundcornerbottomleft', 'alt':'', 'src':'/images/corner_left.png' }
-              %img{'class':'betweencorners',        'alt':'', 'src':'/images/dot.gif'    }
-              %img{'class':'roundcornerbottomright','alt':'', 'src':'/images/corner_right.png'} 
+              %img{'class':'roundcornerbottomleft', 'alt':'', 'src':'/static/images/corner_left.png' }
+              %img{'class':'betweencorners',        'alt':'', 'src':'/static/images/dot.gif'    }
+              %img{'class':'roundcornerbottomright','alt':'', 'src':'/static/images/corner_right.png'} 
               
         %li
           %a{'href':'#'} Help
           %ul{'id':'help'}
             %li
             
-              %img{'class':'roundcornertopleft',  'alt':'', 'src':'/images/corner_inset_left.png'}
+              %img{'class':'roundcornertopleft',  'alt':'', 'src':'/static/images/corner_inset_left.png'}
               %a{'href':'../help0/'} Help Main
-              %img{'class':'roundcornertopright', 'alt':'', 'src':'/images/corner_inset_right.png'}
+              %img{'class':'roundcornertopright', 'alt':'', 'src':'/static/images/corner_inset_right.png'}
               
             %li
               %a{'href':'../help1/'} Help 1
@@ -161,12 +159,11 @@
               %a{'href':'../help3/'} Help 3
               
             %li{'class':'dropdownbottom'}
-              %img{'class':'roundcornerbottom_left', 'alt':'', 'src':'/images/corner_left.png' }
-              %img{'class':'betweencorners',         'alt':'', 'src':'/images/dot.gif'         }
-              %img{'class':'roundcornerbottomright', 'alt':'', 'src':'/images/corner_right.png'}
+              %img{'class':'roundcornerbottom_left', 'alt':'', 'src':'/static/images/corner_left.png' }
+              %img{'class':'betweencorners',         'alt':'', 'src':'/static/images/dot.gif'         }
+              %img{'class':'roundcornerbottomright', 'alt':'', 'src':'/static/images/corner_right.png'}
         
-        
-        //added class singlelink to borrow from left side menu behavior  
+        //added class singlelink to borrow from left side menu behavior       
         <li class="singlelink 
           - if  request.path_info == '/admin/' 
             current
@@ -177,11 +174,11 @@
             current
           "><a href='../login/' >Login</a>
         </li>   
-       
+        
         %li 
           .filler &nbsp;
           
-       /%img{'class':'rightend', 'alt':"", 'src':'/images/vimeomenuright.png' }  
+       /%img{'class':'rightend', 'alt':"", 'src':'/static/images/vimeomenuright.png' }  
         
     .content
       .intro
