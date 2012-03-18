@@ -4,3 +4,6 @@
 *.pyc
 build
 dist
+out
+vimooglemenu/SECRET
+
